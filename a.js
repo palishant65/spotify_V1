@@ -6,6 +6,8 @@ let masterPlay=document.getElementById('masterPlay');
 let myProgressBar=document.getElementById('myProgressBar');
 let gif=document.getElementById("gif");
 let masterSongName = document.getElementById('masterSongName');
+let previous=document.getElementById('previous');
+let next=document.getElementById('next');
 let songItems= Array.from(document.getElementsByClassName("songItem"));
 let isManualChange=false;
 let songs = [
@@ -14,11 +16,11 @@ let songs = [
   {songName: "Robbery", filePath: "songs/1 (2).mp3", coverPath: "covers/3.jpg"},
   {songName: "Legends", filePath: "songs/1 (3).mp3", coverPath: "covers/4.jpg"},
   {songName: "Come & Go", filePath: "songs/1 (4).mp3", coverPath: "covers/5.jpg"},
-  {songName: "sad", filePath: "songs/1 (5).mp3", coverPath: "covers/6.jpg"},
-  {songName: "Bad Boy", filePath: "songs/1 (6).mp3", coverPath: "covers/7.jpg"},
-  {songName: "Moonlight", filePath: "songs/1 (8).mp3", coverPath: "covers/8.jpg"},
-  {songName: "Changes", filePath: "songs/1 (9).mp3", coverPath: "covers/9.jpg"},
-  {songName: "Jocelyn Flores", filePath: "songs/1 (10).mp3", coverPath: "covers/10.jpg"}
+  {songName: "sad", filePath: "songs/1(5).mp3", coverPath: "covers/6.jpg"},
+  {songName: "Bad Boy", filePath: "songs/1(6).mp3", coverPath: "covers/7.jpg"},
+  {songName: "Moonlight", filePath: "songs/1(8).mp3", coverPath: "covers/8.jpg"},
+  {songName: "Changes", filePath: "songs/1(9).mp3", coverPath: "covers/9.jpg"},
+  {songName: "Jocelyn Flores", filePath: "songs/1(10).mp3", coverPath: "covers/10.jpg"}
 ];
 songItems.forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
@@ -32,16 +34,22 @@ masterPlay.addEventListener("click",()=>{
         masterPlay.classList.remove("fa-play-circle");
         masterPlay.classList.add("fa-pause-circle");
         makeAllPlays();
-        document.getElementById(songIndex).classList.remove("fa-play-circle")
-        document.getElementById(songIndex).classList.add("fa-pause-circle")
+        let currentIcon = document.getElementById(songIndex);
+        if(currentIcon){
+            currentIcon.classList.remove("fa-play-circle")
+            currentIcon.classList.add("fa-pause-circle")
+        }
         gif.style.opacity=1;
     }
     else{
         audioElement.pause();
         masterPlay.classList.remove("fa-pause-circle");
         masterPlay.classList.add("fa-play-circle");
-        document.getElementById(songIndex).classList.remove("fa-pause-circle")
-        document.getElementById(songIndex).classList.add("fa-play-circle")
+        let currentIcon = document.getElementById(songIndex);
+        if(currentIcon){
+            currentIcon.classList.remove("fa-pause-circle")
+            currentIcon.classList.add("fa-play-circle")
+        }
         gif.style.opacity=0;
         
 
