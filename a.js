@@ -18,9 +18,9 @@ let songs = [
   {songName: "Come & Go", filePath: "songs/1 (4).mp3", coverPath: "covers/5.jpg"},
   {songName: "sad", filePath: "songs/1(5).mp3", coverPath: "covers/6.jpg"},
   {songName: "Bad Boy", filePath: "songs/1(6).mp3", coverPath: "covers/7.jpg"},
-  {songName: "Moonlight", filePath: "songs/1(8).mp3", coverPath: "covers/8.jpg"},
-  {songName: "Changes", filePath: "songs/1(9).mp3", coverPath: "covers/9.jpg"},
-  {songName: "Jocelyn Flores", filePath: "songs/1(10).mp3", coverPath: "covers/10.jpg"}
+  {songName: "Moonlight", filePath: "songs/1(7).mp3", coverPath: "covers/8.jpg"},
+  {songName: "Changes", filePath: "songs/1(8).mp3", coverPath: "covers/9.jpg"},
+  {songName: "Jocelyn Flores", filePath: "songs/1(9).mp3", coverPath: "covers/10.jpg"}
 ];
 songItems.forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
