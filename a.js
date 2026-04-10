@@ -64,6 +64,13 @@ audioElement.addEventListener("timeupdate",()=>{
 myProgressBar.addEventListener("input",()=>{
     audioElement.currentTime=myProgressBar.value*audioElement.duration/100;
 });
+// Sync GIF with audio play/pause state
+audioElement.addEventListener("play", () => {
+    gif.style.opacity = 1;
+});
+audioElement.addEventListener("pause", () => {
+    gif.style.opacity = 0;
+});
 const makeAllPlays=()=>{
     Array.from(document.getElementsByClassName("songItemPlay")).forEach((element)=>{
      element.classList.remove("fa-pause-circle");
